@@ -25,7 +25,7 @@ const argv = yargs
       alias: 'l',
       type: 'string',
       default: 'en-US',
-      describe: 'Locale of the release notes enclude in the generated output file. Does not apply to the "json" format.'
+      describe: 'Locale of the release notes include in the generated output file. Does not apply to the "json" format.'
     },
     format: {
       alias: 'f',

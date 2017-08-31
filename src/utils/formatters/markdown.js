@@ -30,7 +30,7 @@ export default function toMarkdown (releaseNotes, locale = 'en-US') {
       if (Array.isArray(item.tags) && item.tags.length > 0) {
         itemNote += `**${item.tags.map((t) => _.startCase(t)).join(' / ')}** - `
       }
-      itemNote += item.description.replace(/\n-*/g, '\n  - ')
+      itemNote += item.description.replace(/^(\s*)-/gm, '$1  -')
       content.push(itemNote)
     })
     content.push('')
