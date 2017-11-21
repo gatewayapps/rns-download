@@ -6,6 +6,7 @@ export default function toMarkdown (releaseNotes, locale = 'en-US') {
   }
 
   let content = []
+  const releaseCount = releaseNotes.length
 
   releaseNotes.forEach((rn) => {
     const notes = rn.notes.filter((n) => n.locale.toLowerCase() === locale.toLowerCase())
@@ -19,7 +20,14 @@ export default function toMarkdown (releaseNotes, locale = 'en-US') {
       return
     }
 
-    content.push(`## ${rn.version}`)
+    if (releaseCount > 1) {
+      let releaseHeader = `## ${rn.version}`
+      if (rn.name) {
+        releaseHeader += `: ${rn.name}`
+      }
+      content.push(releaseHeader)
+    }
+
     if (note.header) {
       content.push(note.header)
       content.push('')
