@@ -3,7 +3,9 @@ import toJson from './utils/formatters/json'
 import toMarkdown from './utils/formatters/markdown'
 
 export default {
-  getReleaseNotes
+  getReleaseNotes,
+  toJson,
+  toMarkdown
 }
 
 export function getReleaseNotes (projectId, version, options) {

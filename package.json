@@ -1,6 +1,6 @@
 {
   "name": "rns-download",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility for downloading release notes from Release Notes Service",
   "babel": {
     "presets": [
